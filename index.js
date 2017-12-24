@@ -10,7 +10,7 @@ let dataToJSON = {};
 const testFolder = 'ref/ref_arm/';
 const outputFileName = 'data.json';
 const categories = ['collection data', 'basic data', 'amount of plates', 'estimated dating by stylistic criteria',
-    'marks', 'applications', 'turned/angled edge', 'rivets', 'joint between segments of', 'joint of segments within type', 'washers', 'group'];
+    'marks', 'applications', 'turned/angled edge', 'rivets', 'joint between segments of', 'joint of segments within type', 'washers', 'group', 'ridges', 'plate decoration'];
 
 let writeToFile = () => {
     jsonfile.writeFile(outputFileName, dataToJSON, function (err) {

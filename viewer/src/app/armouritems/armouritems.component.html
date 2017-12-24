@@ -1,0 +1,10 @@
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel *ngFor="let armour of armouritems">
+    <ng-template ngbPanelTitle>
+      <span>{{armour['Item-ID']}}</span> {{armour.Type}}
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <pre>{{armour | json}}</pre>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

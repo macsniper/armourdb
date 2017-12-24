@@ -1,6 +1,6 @@
 {
   "name": "armourdb",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "dependencies": {
     "pdfreader": "^0.2.4",
     "lodash": "^4.17.4",
