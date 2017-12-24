@@ -6,12 +6,11 @@ import * as _ from "lodash";
 @Injectable()
 export class ArmourService {
   
-  filteredValues = _.values(ARMOURITEMS).filter((item) => !!item);  
-
   getArmourItems() {
-    return filteredValues;
+    return _.values(ARMOURITEMS).filter((item) => !!item);
   }
 
-  constructor() { }
+  constructor() {
+  }
 
 }
