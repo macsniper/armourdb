@@ -1,0 +1,9 @@
+{
+  "name": "armourdb",
+  "version": "0.0.1",
+  "dependencies": {
+    "pdfreader": "^0.2.4",
+    "lodash": "^4.17.4",
+    "jsonfile": "^4.0.0"
+  }
+}
