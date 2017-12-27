@@ -7,12 +7,14 @@ import { ArmouritemsComponent } from './armouritems/armouritems.component';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { ArmourService } from './armour.service';
+import { ArmourfilterComponent } from './armourfilter/armourfilter.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArmouritemsComponent
+    ArmouritemsComponent,
+    ArmourfilterComponent
   ],
   imports: [
     BrowserModule,

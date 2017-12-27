@@ -8,16 +8,26 @@ import { ArmourService } from '../armour.service';
 })
 export class ArmouritemsComponent implements OnInit {
 
+  filteredArmourItems;
   armouritems;
 
   getArmourItems(): void {
     this.armouritems = this.armourService.getArmourItems();
   }
 
+  filter(): void {
+     
+  }
+
   constructor(private armourService: ArmourService) { }
 
   ngOnInit() {
     this.getArmourItems();
+    this.filteredArmourItems = this.armouritems;
+  }
+
+  onFilter(event: any) {
+
   }
 
 }
