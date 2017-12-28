@@ -1,5 +1,5 @@
 <ngb-accordion #acc="ngbAccordion">
-  <ngb-panel *ngFor="let armour of filteredArmourItems">
+  <ngb-panel *ngFor="let armour of getArmourItems()">
     <ng-template ngbPanelTitle>
       <span>{{armour['Item-ID']}}</span> {{armour.Type}}
     </ng-template>

@@ -1,3 +1,17 @@
-<p>
-  armourfilter works!
-</p>
+<h2>search options</h2>
+<form #armourFilterForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="freetext">free text search</label>
+    <input type="text" name="freetext" class="form-control" id="freetext" [(ngModel)]="model.freetext" required>
+  </div>
+
+  <div class="form-group">
+    <label for="power">armour type</label>
+    <select class="form-control" id="armourtype" required [(ngModel)]="model.armourtype" name="armourtype">
+      <option *ngFor="let t of armourTypes" [value]="t">{{t}}</option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="button" class="btn btn-default" (click)="formReset(); armourFilterForm.reset()">Reset</button>
+</form>
