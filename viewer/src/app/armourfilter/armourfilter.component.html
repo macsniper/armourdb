@@ -6,9 +6,24 @@
   </div>
 
   <div class="form-group">
-    <label for="power">armour type</label>
+    <label for="armourtype">armour type</label>
     <select class="form-control" id="armourtype" required [(ngModel)]="model.armourtype" name="armourtype">
       <option *ngFor="let t of armourTypes" [value]="t">{{t}}</option>
+      <option [value]="undefined"></option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="productionCity">attributed production city</label>
+    <select class="form-control" id="productionCity" required [(ngModel)]="model.productionCity" name="productionCity">
+      <option *ngFor="let city of productionCities" [value]="city">{{city}}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="productionRegion">attributed production region</label>
+    <select class="form-control" id="productionRegion" required [(ngModel)]="model.productionRegion" name="productionRegion">
+      <option *ngFor="let region of productionRegions" [value]="region">{{region}}</option>
     </select>
   </div>
 

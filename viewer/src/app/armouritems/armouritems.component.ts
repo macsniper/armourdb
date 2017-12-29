@@ -12,6 +12,10 @@ export class ArmouritemsComponent implements OnInit {
     return this.armourService.getArmourItems();
   }
 
+  getArmourItemsCount() {
+    return this.armourService.getArmourItemCount();
+  }
+
   constructor(private armourService: ArmourService) { }
 
   ngOnInit() {
