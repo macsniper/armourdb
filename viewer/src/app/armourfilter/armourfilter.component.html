@@ -1,32 +1,94 @@
 <h2>search options</h2>
 <form #armourFilterForm="ngForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="freetext">free text search</label>
-    <input type="text" name="freetext" class="form-control" id="freetext" [(ngModel)]="model.freetext" required>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="freetext">free text search</label>
+    <div class="col-sm-10">
+      <input type="text" name="freetext" class="form-control" id="freetext" [(ngModel)]="model.freetext" required>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="armourtype">armour type</label>
-    <select class="form-control" id="armourtype" required [(ngModel)]="model.armourtype" name="armourtype">
-      <option *ngFor="let t of armourTypes" [value]="t">{{t}}</option>
-      <option [value]="undefined"></option>
-    </select>
+  <div class="form-group row">
+    <label for="armourtype" class="col-sm-2 col-form-label">armour type</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="armourtype" required [(ngModel)]="model.armourtype" name="armourtype">
+        <option *ngFor="let t of armourTypes" [value]="t">{{t}}</option>
+        <option [value]="undefined"></option>
+      </select>
+    </div>
   </div>
   
-  <div class="form-group">
-    <label for="productionCity">attributed production city</label>
-    <select class="form-control" id="productionCity" required [(ngModel)]="model.productionCity" name="productionCity">
-      <option *ngFor="let city of productionCities" [value]="city">{{city}}</option>
-    </select>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="productionCity">attributed production city</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="productionCity" required [(ngModel)]="model.productionCity" name="productionCity">
+        <option *ngFor="let city of productionCities" [value]="city">{{city}}</option>
+      </select>
+    </div>
   </div>
 
-  <div class="form-group">
-    <label for="productionRegion">attributed production region</label>
-    <select class="form-control" id="productionRegion" required [(ngModel)]="model.productionRegion" name="productionRegion">
-      <option *ngFor="let region of productionRegions" [value]="region">{{region}}</option>
-    </select>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label" for="productionRegion">attributed production region</label>
+    <div class="col-sm-10">
+      <select class="form-control" id="productionRegion" required [(ngModel)]="model.productionRegion" name="productionRegion">
+        <option *ngFor="let region of productionRegions" [value]="region">{{region}}</option>
+      </select>
+    </div>
   </div>
 
-  <button type="submit" class="btn btn-success">Submit</button>
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0" style="font-size: 1rem">side of body</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="model.sideOfBody" type="radio" name="gridRadios" id="sideOfBody" value="left">
+          <label class="form-check-label" for="gridRadios1">
+            left
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="model.sideOfBody" type="radio" name="gridRadios" id="sideOfBody" value="right">
+          <label class="form-check-label" for="gridRadios2">
+            right
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="model.sideOfBody" type="radio" name="gridRadios" id="sideOfBody" value="">
+          <label class="form-check-label" for="gridRadios3">
+            both
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0" style="font-size: 1rem">part of pair</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="model.partOfPair" type="checkbox" name="gridRadios2" id="partOfPair" value="true">
+          <label class="form-check-label" for="gridRadios2">
+            true
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0" style="font-size: 1rem">part of suit</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" [(ngModel)]="model.partOfSuit" type="checkbox" name="gridRadios3" id="partOfSuit" value="true">
+          <label class="form-check-label" for="gridRadios3">
+            true
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
   <button type="button" class="btn btn-default" (click)="formReset(); armourFilterForm.reset()">Reset</button>
 </form>

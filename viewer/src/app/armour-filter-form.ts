@@ -4,5 +4,8 @@ export class ArmourFilterForm {
     public freetext: string,
     public productionRegion: string,
     public productionCity: string
+    public partOfPair: boolean,
+    public partOfSuit: boolean,
+    public sideOfBody: string
   ) { }
 }
