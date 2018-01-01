@@ -1,27 +1,15 @@
-# Viewer
+# armour database viewer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.2.
+## Installation
 
-## Development server
+* Download archive armourdb.zip from [here](https://github.com/macsniper/armourdb/raw/master/armourdb.zip)
+* Download the ph.d thesis from Mattias Goll from [here](http://www.ub.uni-heidelberg.de/archiv/17203)
+* unzip both archives to the same folder
+* open index.html in your favorite browser (double-click it)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Usage
 
-## Code scaffolding
+The form should be self-explanatory. The freetext filter field is used to enter arbitrary contents of any of the metadata fields.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The input 'json filter' can be used to enter arbitrary JSON fragments which the selected items must fulfil. For example, you can write **{"estimated dating by stylistic criteria": {"8th": "decade of 15th c."}}** to search for all items dated to 1470-1480. Or you can write **{"marks": {"identification - city mark": "Nuremberg"}}** for all items which have an identification mark of the city of Nuremberg. Internally this just uses [lodash.filter](https://lodash.com/docs/4.17.4#filter) and uses JSON.parse on the input string.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

@@ -7,11 +7,15 @@ import * as _ from "lodash";
 export class ArmourService {
   
   filters = {}
+  secondFilter = {}
   freetext = ''
   items = [];
 
   getArmourItems() {
     let filtered =  _.filter(this.items, this.filters);
+    if(!_.isEmpty(this.secondFilter)) {
+      filtered = _.filter(filtered, this.secondFilter);
+    }
     let filteredTotal = _.filter(filtered, (item) => _.includes(JSON.stringify(item), this.freetext));
     return filteredTotal;
   }
@@ -22,6 +26,10 @@ export class ArmourService {
 
   setFilter(filter) {
     this.filters = filter;
+  }
+ 
+  setSecondFilter(filter) {
+    this.secondFilter = filter;
   }
 
   setFreetext(text) {

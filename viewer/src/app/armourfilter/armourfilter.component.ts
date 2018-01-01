@@ -27,7 +27,7 @@ export class ArmourfilterComponent implements OnInit {
   }
  
   formReset() {
-    this.model = new ArmourFilterForm('', '', '', '', false, false, ''); 
+    this.model = new ArmourFilterForm('', '', '', '', false, false, '', '{}'); 
     this.armourService.setFilter({});
     this.armourService.setFreetext('');
   }	
@@ -44,6 +44,10 @@ export class ArmourfilterComponent implements OnInit {
       this.armourService.setFreetext(this.model.freetext);
     }
     this.armourService.setFilter(filterObject);
+    debugger;
+    if(!_.isEmpty(JSON.parse(this.model.lodashFilter))) {
+      this.armourService.setSecondFilter(JSON.parse(this.model.lodashFilter));
+    }
   }
 
   private setFilterField(filterObject, path, value) {
